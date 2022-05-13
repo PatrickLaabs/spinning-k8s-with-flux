@@ -5,6 +5,7 @@ metadata:
   name: my-restfulapi-restfulapi
   namespace: default
 spec:
+  interval: 1m
   entryPoints:
     - web
   routes:
