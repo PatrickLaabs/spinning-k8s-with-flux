@@ -3,5 +3,7 @@ kind: Kustomization
 namespace: podinfo
 resources:
   - ../base/podinfo
+  - ../base/restfulgo
 patchesStrategicMerge:
   - podinfo-values.yaml
+  - restfulgo-values.yaml
