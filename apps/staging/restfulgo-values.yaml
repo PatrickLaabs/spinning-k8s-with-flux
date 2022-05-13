@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: restfulapi
-  namespace: restfulgo
+  namespace: rest
 spec:
   chart:
     spec:
@@ -12,7 +12,7 @@ spec:
   values:
     ingress:
       hosts:
-        - host: restfulgo.staging
+        - host: rest.staging
           paths:
             - path: /
               pathType: ImplementationSpecific
