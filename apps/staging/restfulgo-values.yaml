@@ -2,9 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: restfulapi
-  namespace: rest
-spec:
-  chart:
+  namespace: default
     spec:
       version: ">=1.0.0-alpha"
   test:
