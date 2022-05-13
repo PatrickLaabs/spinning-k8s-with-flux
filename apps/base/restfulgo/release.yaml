@@ -1,26 +1,16 @@
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: rest
+  name: my-restfulapi
   namespace: default
 spec:
-  releaseName: rest
   chart:
     spec:
       chart: restfulapi
+      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: restfulapi
-        namespace: flux-system
-  interval: 5m
-  install:
-    remediation:
-      retries: 3
-  # Default values
-  # https://github.com/PatrickLaabs/helm-charts-releaser/blob/main/charts/restfulgo/values.yaml
-  values:
-    #  cache: redis-master.redis:6379
-    #  ingress:
-    #    enabled: false
-    #    annotations:
-    #      kubernetes.io/ingress.class: nginx
+        name: restful-test
+      version: 1.0.2
+  interval: 1m0s
