@@ -17,3 +17,19 @@ metadata:
           paths:
             - path: /
               pathType: ImplementationSpecific
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: restfulgo
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`rest.example.com`)
+      kind: Rule
+      services:
+        - name: my-restfulapi-restfulapi
+          port: 11801
+
