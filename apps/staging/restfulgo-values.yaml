@@ -9,11 +9,9 @@ metadata:
     enable: false
   values:
     ingress:
+    servicePort: my-restfulapi-restfulapi
       hosts:
         - host: rest.staging
           paths:
             - path: /
-              backend:
-                serviceName: my-restfulapi-restfulapi
-                servicePort: 11801
               pathType: ImplementationSpecific
