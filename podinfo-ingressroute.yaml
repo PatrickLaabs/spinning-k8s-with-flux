@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: podinfo
+  namespace: test
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`app.example.com`)
+      kind: Rule
+      services:
+        - name: podinfo
+          kind: TraefikService
+          port: 80
