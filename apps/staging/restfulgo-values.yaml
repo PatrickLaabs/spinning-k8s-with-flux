@@ -5,6 +5,8 @@ metadata:
   namespace: default
     spec:
       version: ">=1.0.0-alpha"
+spec:
+  replicas: 2
   test:
     enable: false
   values:
