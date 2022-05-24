@@ -3,35 +3,14 @@ kind: HelmRelease
 metadata:
   name: patricklaabs
   namespace: grpc
-    spec:
-      version: ">=0.0.0-alpha"
 spec:
-  replicas: 2
-  test:
-    enable: false
+  chart:
+    spec:
+      version: ">=0.1.0-alpha"
   values:
     ingress:
-    services: 
-      - name: my-restfulapi-restfulapi
-        port: 11801
       hosts:
-        - host: rest.staging
+        - host: grpc.staging.com
           paths:
             - path: /
               pathType: ImplementationSpecific
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: restfulgo
-  namespace: default
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`rest.example.com`)
-      kind: Rule
-      services:
-        - name: my-restfulapi-restfulapi
-          port: 11801
-
