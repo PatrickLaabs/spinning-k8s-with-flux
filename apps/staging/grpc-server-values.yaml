@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: restfulapi
-  namespace: default
+  name: patricklaabs
+  namespace: grpc
     spec:
-      version: ">=1.0.0-alpha"
+      version: ">=0.0.0-alpha"
 spec:
   replicas: 2
   test:

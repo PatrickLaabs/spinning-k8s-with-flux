@@ -2,15 +2,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: my-restfulapi
-  namespace: default
+  name: grpc-server
+  namespace: grpc
 spec:
   chart:
     spec:
-      chart: restfulapi
+      chart: grpc-server
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: restful-test
+        name: patricklaabs
       version: 1.0.2
   interval: 1m0s

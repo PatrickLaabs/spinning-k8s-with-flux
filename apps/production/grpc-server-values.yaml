@@ -1,16 +1,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: podinfo
-  namespace: podinfo
+  name: patricklaabs
+  namespace: grpc
 spec:
   chart:
     spec:
-      version: ">=1.0.0"
+      version: ">=0.1.0"
   values:
     ingress:
       hosts:
-        - host: podinfo.production
+        - host: grpc.production.com
           paths:
             - path: /
               pathType: ImplementationSpecific
