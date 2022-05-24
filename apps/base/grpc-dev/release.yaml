@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grpc-server
+  namespace: development
+spec:
+  releaseName: grpc-server
+  chart:
+    spec:
+      chart: grpc-server
+      sourceRef:
+        kind: HelmRepository
+        name: grpc-server
+        namespace: flux-system
+  interval: 1m
+  install:
+    remediation:
+      retries: 3
