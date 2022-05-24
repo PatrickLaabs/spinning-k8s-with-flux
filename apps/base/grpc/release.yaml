@@ -1,21 +1,18 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: redis
+  name: grpc
+  namespace: default
 spec:
-  releaseName: redis
+  releaseName: grpc-server
   chart:
     spec:
-      chart: redis
+      chart: grpc-server
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: grpc-server
         namespace: flux-system
-      version: "11.3.4"
-  interval: 1h0m0s
+  interval: 1m
   install:
     remediation:
       retries: 3
-  valuesFrom:
-    - kind: ConfigMap
-      name: redis-values
