@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: patricklaabs
+  namespace: grpc
+spec:
+  interval: 1m0s
+  url: https://patricklaabs.github.io/helm-charts-releaser/
