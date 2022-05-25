@@ -4,6 +4,7 @@ metadata:
   name: grpc-server
   namespace: development
 spec:
+  replicas: 5
   chart:
     spec:
       version: ">=0.1.3-alpha"
