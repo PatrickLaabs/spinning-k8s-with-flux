@@ -6,9 +6,9 @@ metadata:
 spec:
   chart:
     spec:
-      replicas: 5
       version: ">=0.1.3-alpha"
   values:
+    replicaCount: 2
     ingress:
       hosts:
         - host: grpc-dev.example.com

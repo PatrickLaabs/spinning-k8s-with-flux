@@ -7,7 +7,6 @@ spec:
   releaseName: grpc-server
   chart:
     spec:
-      replicas: 1
       chart: grpc-server
       sourceRef:
         kind: HelmRepository
