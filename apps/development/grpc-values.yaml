@@ -4,9 +4,9 @@ metadata:
   name: grpc-server
   namespace: development
 spec:
-  replicas: 5
   chart:
     spec:
+      replicas: 5
       version: ">=0.1.3-alpha"
   values:
     ingress:
