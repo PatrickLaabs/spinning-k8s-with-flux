@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grpc-server
+  namespace: development
+spec:
+  chart:
+    spec:
+      version: ">=0.1.3-alpha"
+  values:
+    replicaCount: 2
+    ingress:
+      hosts:
+        - host: grpc-dev.example.com
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
