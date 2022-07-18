@@ -4,3 +4,4 @@ namespace: flux-system
 resources:
   - podinfo.yaml
   - grpc-server.yaml
+  - traefik.yaml
